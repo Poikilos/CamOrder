@@ -1,0 +1,4 @@
+copy "%INFILE%" "%OUTFILE%"
+"C:\Program Files (x86)\WinFF\ffmpeg" -y -i "%INFILE%" -r 29.97 -s 1920x1080 -q:v 4 -vcodec mpeg2video -acodec copy -f mpegts "%OUTFILE%"
+"C:\Program Files (x86)\WinFF\ffmpeg" -y -i "%INFILE%" -r 29.97 -s 1280x720 -q:v 4 -vcodec mpeg2video -acodec copy -f mpegts "%OUTFILE%"
+"C:\PortableApps\Video\ffmpeg-static\bin\ffmpeg" -y -i "%INFILE%" -r 29.97 -s 1280x720 -q:v 4 -strict -2 -vcodec mpeg2video -acodec copy -f mpegts "%OUTFILE%"

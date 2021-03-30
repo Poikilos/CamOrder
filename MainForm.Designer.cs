@@ -90,6 +90,8 @@ namespace ExpertMultimedia
 			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.saveOutputToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.copyStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.instructionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.supportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.savefiledlgMain = new System.Windows.Forms.SaveFileDialog();
 			this.openfiledlgMain = new System.Windows.Forms.OpenFileDialog();
 			this.tableLayoutPanelOutput = new System.Windows.Forms.TableLayoutPanel();
@@ -123,10 +125,12 @@ namespace ExpertMultimedia
 			this.tableLayoutPanelOutput.SuspendLayout();
 			this.flowLayoutPanelButtonsBelowOutputList.SuspendLayout();
 			this.flowLayoutPanelButtonsAboveOutputList.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.splitContainerMainInAndOut)).BeginInit();
 			this.splitContainerMainInAndOut.Panel1.SuspendLayout();
 			this.splitContainerMainInAndOut.Panel2.SuspendLayout();
 			this.splitContainerMainInAndOut.SuspendLayout();
 			this.formUpperOuterTableLayoutPanel.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.formUpperSplitContainer)).BeginInit();
 			this.formUpperSplitContainer.Panel1.SuspendLayout();
 			this.formUpperSplitContainer.Panel2.SuspendLayout();
 			this.formUpperSplitContainer.SuspendLayout();
@@ -134,6 +138,7 @@ namespace ExpertMultimedia
 			this.formUpperLeftOuterSettingsTableLayoutPanel.SuspendLayout();
 			this.flowLayoutPanel2.SuspendLayout();
 			this.inputListTableLayoutPanel.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.Panel2.SuspendLayout();
 			this.splitContainer1.SuspendLayout();
@@ -189,8 +194,8 @@ namespace ExpertMultimedia
 			this.tbDTFormatString.Size = new System.Drawing.Size(298, 27);
 			this.tbDTFormatString.TabIndex = 5;
 			this.tbDTFormatString.Text = "yyyy-MM-dd HH_mm_ss";
-			this.tbDTFormatString.MouseLeave += new System.EventHandler(this.TbDTFormatStringMouseLeave);
 			this.tbDTFormatString.MouseEnter += new System.EventHandler(this.TbDTFormatStringMouseEnter);
+			this.tbDTFormatString.MouseLeave += new System.EventHandler(this.TbDTFormatStringMouseLeave);
 			// 
 			// tbPrependCam
 			// 
@@ -412,9 +417,9 @@ namespace ExpertMultimedia
 			this.cbFolderIn.Size = new System.Drawing.Size(300, 27);
 			this.cbFolderIn.TabIndex = 25;
 			this.cbFolderIn.SelectedIndexChanged += new System.EventHandler(this.CbFolderInSelectedIndexChanged);
+			this.cbFolderIn.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CbFolderInKeyDown);
 			this.cbFolderIn.Leave += new System.EventHandler(this.CbFolderInLeave);
 			this.cbFolderIn.MouseDown += new System.Windows.Forms.MouseEventHandler(this.CbFolderInMouseDown);
-			this.cbFolderIn.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CbFolderInKeyDown);
 			// 
 			// flowLayoutPanel1
 			// 
@@ -551,14 +556,14 @@ namespace ExpertMultimedia
 			this.inputListView.UseCompatibleStateImageBehavior = false;
 			this.inputListView.View = System.Windows.Forms.View.Details;
 			this.inputListView.ItemActivate += new System.EventHandler(this.InputListViewItemActivate);
+			this.inputListView.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.InputListViewItemCheck);
 			this.inputListView.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.InputListViewItemChecked);
 			this.inputListView.SelectedIndexChanged += new System.EventHandler(this.InputListViewSelectedIndexChanged);
+			this.inputListView.Click += new System.EventHandler(this.InputListViewClick);
 			this.inputListView.DoubleClick += new System.EventHandler(this.InputListViewDoubleClick);
-			this.inputListView.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.InputListViewItemCheck);
-			this.inputListView.MouseUp += new System.Windows.Forms.MouseEventHandler(this.InputListViewMouseUp);
 			this.inputListView.MouseDown += new System.Windows.Forms.MouseEventHandler(this.InputListViewMouseDown);
 			this.inputListView.MouseLeave += new System.EventHandler(this.InputListViewMouseLeave);
-			this.inputListView.Click += new System.EventHandler(this.InputListViewClick);
+			this.inputListView.MouseUp += new System.Windows.Forms.MouseEventHandler(this.InputListViewMouseUp);
 			// 
 			// tlpCopyCommand
 			// 
@@ -718,7 +723,9 @@ namespace ExpertMultimedia
 			// 
 			this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
 									this.saveOutputToolStripMenuItem,
-									this.copyStatusToolStripMenuItem});
+									this.copyStatusToolStripMenuItem,
+									this.instructionsToolStripMenuItem,
+									this.supportToolStripMenuItem});
 			this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
 			this.helpToolStripMenuItem.Size = new System.Drawing.Size(54, 25);
 			this.helpToolStripMenuItem.Text = "&Help";
@@ -727,7 +734,7 @@ namespace ExpertMultimedia
 			// saveOutputToolStripMenuItem
 			// 
 			this.saveOutputToolStripMenuItem.Name = "saveOutputToolStripMenuItem";
-			this.saveOutputToolStripMenuItem.Size = new System.Drawing.Size(261, 26);
+			this.saveOutputToolStripMenuItem.Size = new System.Drawing.Size(341, 26);
 			this.saveOutputToolStripMenuItem.Text = "Save &Batch";
 			this.saveOutputToolStripMenuItem.Click += new System.EventHandler(this.SaveOutputToolStripMenuItemClick);
 			// 
@@ -736,9 +743,23 @@ namespace ExpertMultimedia
 			this.copyStatusToolStripMenuItem.Name = "copyStatusToolStripMenuItem";
 			this.copyStatusToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
 									| System.Windows.Forms.Keys.C)));
-			this.copyStatusToolStripMenuItem.Size = new System.Drawing.Size(261, 26);
+			this.copyStatusToolStripMenuItem.Size = new System.Drawing.Size(341, 26);
 			this.copyStatusToolStripMenuItem.Text = "Copy &Status";
 			this.copyStatusToolStripMenuItem.Click += new System.EventHandler(this.CopyStatusToolStripMenuItemClick);
+			// 
+			// instructionsToolStripMenuItem
+			// 
+			this.instructionsToolStripMenuItem.Name = "instructionsToolStripMenuItem";
+			this.instructionsToolStripMenuItem.Size = new System.Drawing.Size(341, 26);
+			this.instructionsToolStripMenuItem.Text = "Instructions";
+			this.instructionsToolStripMenuItem.Click += new System.EventHandler(this.InstructionsToolStripMenuItemClick);
+			// 
+			// supportToolStripMenuItem
+			// 
+			this.supportToolStripMenuItem.Name = "supportToolStripMenuItem";
+			this.supportToolStripMenuItem.Size = new System.Drawing.Size(341, 26);
+			this.supportToolStripMenuItem.Text = "Support (only report issues not listed)";
+			this.supportToolStripMenuItem.Click += new System.EventHandler(this.SupportToolStripMenuItemClick);
 			// 
 			// tableLayoutPanelOutput
 			// 
@@ -880,7 +901,7 @@ namespace ExpertMultimedia
 			this.outputListBox.Margin = new System.Windows.Forms.Padding(4);
 			this.outputListBox.Name = "outputListBox";
 			this.outputListBox.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-			this.outputListBox.Size = new System.Drawing.Size(916, 118);
+			this.outputListBox.Size = new System.Drawing.Size(916, 133);
 			this.outputListBox.TabIndex = 9;
 			this.outputListBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.OutputListBoxMouseClick);
 			// 
@@ -1089,9 +1110,9 @@ namespace ExpertMultimedia
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "MainForm";
 			this.Text = "CamOrder";
+			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainFormFormClosing);
 			this.Load += new System.EventHandler(this.MainFormLoad);
 			this.Shown += new System.EventHandler(this.MainFormShown);
-			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainFormFormClosing);
 			this.formInputSettingsTableLayoutPanel.ResumeLayout(false);
 			this.formInputSettingsTableLayoutPanel.PerformLayout();
 			this.flowLayoutPanel1.ResumeLayout(false);
@@ -1108,11 +1129,13 @@ namespace ExpertMultimedia
 			this.flowLayoutPanelButtonsAboveOutputList.PerformLayout();
 			this.splitContainerMainInAndOut.Panel1.ResumeLayout(false);
 			this.splitContainerMainInAndOut.Panel2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.splitContainerMainInAndOut)).EndInit();
 			this.splitContainerMainInAndOut.ResumeLayout(false);
 			this.formUpperOuterTableLayoutPanel.ResumeLayout(false);
 			this.formUpperOuterTableLayoutPanel.PerformLayout();
 			this.formUpperSplitContainer.Panel1.ResumeLayout(false);
 			this.formUpperSplitContainer.Panel2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.formUpperSplitContainer)).EndInit();
 			this.formUpperSplitContainer.ResumeLayout(false);
 			this.inputSettingsScrollPanel.ResumeLayout(false);
 			this.formUpperLeftOuterSettingsTableLayoutPanel.ResumeLayout(false);
@@ -1123,12 +1146,15 @@ namespace ExpertMultimedia
 			this.inputListTableLayoutPanel.PerformLayout();
 			this.splitContainer1.Panel1.ResumeLayout(false);
 			this.splitContainer1.Panel2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
 			this.splitContainer1.ResumeLayout(false);
 			this.flowLayoutPanelControlsLeftOfOutputBox.ResumeLayout(false);
 			this.flowLayoutPanelControlsLeftOfOutputBox.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private System.Windows.Forms.ToolStripMenuItem instructionsToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem supportToolStripMenuItem;
 		private System.Windows.Forms.ComboBox cbFolderIn;
 		private System.Windows.Forms.Button saveCamSettingsButton;
 		private System.Windows.Forms.ToolStripMenuItem allowMarkingUnusableWithoutReasonToolStripMenuItem;

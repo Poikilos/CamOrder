@@ -2688,5 +2688,15 @@ namespace ExpertMultimedia {
 		{
 			//cbxCopyCommand.Size = new Size(cbxCopyCommand.Parent.Width, cbxCopyCommand.Size.Height); //makes it go outside of the parent in mono
 		}
+		
+		void SupportToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			System.Diagnostics.Process.Start("https://github.com/poikilos/CamOrder/issues/");
+		}
+		
+		void InstructionsToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			System.Diagnostics.Process.Start("https://github.com/poikilos/CamOrder/blob/main/readme.md");
+		}
 	}//end MainForm
 }//end namespace

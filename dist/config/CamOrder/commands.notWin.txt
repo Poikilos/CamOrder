@@ -1,0 +1,3 @@
+ffmpeg -nostdin -i "%INFILE%" -r 29.97 -s 1280x720 -q:v 4 -strict -2 -vcodec mpeg2video -acodec copy -f mpegts "%OUTFILE%"
+ffmpeg -nostdin -i "%INFILE%" -r 29.97 -q:v 4 -vcodec mpeg2video "%OUTFILE%.mp4"
+cp "%INFILE%" "%OUTFILE%"
