@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{5C3DCEE2-6EC8-41E3-A36B-11B1F12ACFB7}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>ExpertMultimedia</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)MainForm.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CachedDir.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IEduSourceFile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Program.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MainForm.Designer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IEduSettings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IEduYaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainForm.resx" />
+  </ItemGroup>
+</Project>
