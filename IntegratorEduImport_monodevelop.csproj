@@ -6,7 +6,7 @@
     <ProjectGuid>{9B66EB58-7721-409C-B832-4A26EDBA790F}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>ExpertMultimedia</RootNamespace>
-    <AssemblyName>IntegratorEduImport</AssemblyName>
+    <AssemblyName>CamOrder</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">

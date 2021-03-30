@@ -1,6 +1,6 @@
 ﻿/*
  * Created by SharpDevelop.
- * User: jgustafson
+ * User: Poikilos
  * Date: 10/11/2012
  * Time: 1:51 AM
  * 
@@ -1088,7 +1088,7 @@ namespace ExpertMultimedia
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "MainForm";
-			this.Text = "IntegratorEduImport";
+			this.Text = "CamOrder";
 			this.Load += new System.EventHandler(this.MainFormLoad);
 			this.Shown += new System.EventHandler(this.MainFormShown);
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainFormFormClosing);

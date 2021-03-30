@@ -1,6 +1,6 @@
 ﻿/*
  * Created by SharpDevelop.
- * User: jgustafson
+ * User: Poikilos
  * Date: 10/11/2012
  * Time: 1:51 AM
  * 

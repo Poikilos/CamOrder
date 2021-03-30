@@ -1,6 +1,6 @@
 ﻿/*
  * Created by SharpDevelop.
- * User: jgustafson
+ * User: Poikilos
  * Date: 10/11/2012
  * Time: 1:51 AM
  * 
@@ -27,7 +27,7 @@ namespace ExpertMultimedia {
 		/// <summary>
 		/// Do not encode the file if placeholder e.g. dest.MPG.txt exists
 		/// </summary>
-		public static string sMyName="IntegratorEduImport"; //used for user interaction AND subfolder of special folder
+		public static string sMyName="CamOrder"; //used for user interaction AND subfolder of special folder
 		public static string settingsFolder_FullName="";
 		public static bool setCheckboxForEachVideoNotYetCopied_enable = false;
 		public static string batch_DeleteCommandString="del";
@@ -38,7 +38,7 @@ namespace ExpertMultimedia {
 		public static ArrayList alSources=new ArrayList();
 		public static ArrayList alDestinations=new ArrayList();
 		public static ArrayList alNotAVideoFile_LowerCaseStrings_ToCompareCaseInsensitively=new ArrayList();
-		public const string IEduSettings_Dest_File_Name="integratoreduimport.xml";
+		public const string IEduSettings_Dest_File_Name="camorder.xml";
 		public const string IEduSettings_Source_Destinations_File_Name="destinations.txt";
 		public static string var_PrependCam="PrependCam";
 		public const string sUnusableFolder_Name="unusable";
