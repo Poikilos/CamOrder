@@ -8,7 +8,7 @@
     <AssemblyName>CamOrder</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <SourceAnalysisOverrideSettingsFile>C:\Users\Jakeg7505\AppData\Roaming\ICSharpCode/SharpDevelop3.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <SourceAnalysisOverrideSettingsFile>C:\Users\Owner\AppData\Roaming\ICSharpCode/SharpDevelop3.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
     <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
     <NoStdLib>False</NoStdLib>
     <WarningLevel>4</WarningLevel>
@@ -58,10 +58,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\IntegratorEdu-2012\IEduSettings.cs">
+    <Compile Include="IEduSettings.cs">
       <Link>IEduSettings.cs</Link>
     </Compile>
-    <Compile Include="..\IntegratorEdu\IEduYaml.cs">
+    <Compile Include="IEduYaml.cs">
       <Link>IEduYaml.cs</Link>
     </Compile>
     <Compile Include="CachedDir.cs" />
