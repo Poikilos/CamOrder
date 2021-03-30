@@ -1,10 +1,11 @@
-# IntegratorEduImport
+# CamOrder
+Import and organize media from your camera in one step. This program was formerly named IntegratorEduImport before released. 
 
-## Key Features:
-* keeps a record of files already copied, and prevents redoing
+## Key Features
+* Keep a record of files already copied to prevent re-importing.
 
 
-## Known Issues:
+## Known Issues
 * Make commands keyed by suffix (instead of having suffix based on camera)
 * Removes source from list if ffmpeg has a protocol error (such as smb://) but they should be added to the failed list so they will be added back in after the list is cleared
 * If source name is different when doing Reload Source, batch should be cleared.
@@ -19,39 +20,16 @@
 * allow adding to batch even if did already (currently prevents import even after moving file if was imported before, so probably has a marker)
 * require project name (?)
 * finish mark unusable and check whether unusable methods: check for existing files (or markers) etc
-	* two buttons: mark as unusable, add to project, clear markers
-		* each is color coded
-	* only mark as imported if batch has been run
+  * two buttons: mark as unusable, add to project, clear markers
+    * each is color coded
+  * only mark as imported if batch has been run
 * mark files as processed even if only imported, in case files are deleted later (on test cameras, should start from CamA 507 and CamB 466)
 * If present after converting and >0 bytes, remove from batch
 * should more reliably mark which files are finished (find out why not; may be related to DST or other time issue)
 * For each line, confirm overwrite if already present on dest with EXACT given filename (not just same source)
 
 ## Changes
-* (2017-12-01) improved destination listing to make more "Exists" checks at appropriate times
-    * (2017-12-01) fixed startup (start timer tick) crash when xml file is not on a theoretical destination
-* (2017-11-30) for "Copy command" drop-down box, initially select last command where any file exists (instead of just selecting first command in list)
-	* finish split_respecting_quotes
-* (2017-11-30) if source doesn't exist (or other exception accessing source), clear input list
-* (2017-11-30) changed ffmpeg option from -y to -nostdin to avoid any stopping
-* (2017-11-30) added monodevelop project
-    * created empty project in .NET category under "Other", named IntegratorEduImport_monodevelop
-    * moved the files to IntegratorEduImport
-    * added relevant cs files including AssemblyInfo.cs in Properties folder
-    * added assembly references as needed
-    * still had "could not find any resources for the specified culture" when setting icon
-    * right-clicked project, Options, changed default namespace to ExpertMultimedia (resolved)
-* (2017-10-27) clear Camera Name on "Reload Camera"
-* (2017-10-27) clear batch listbox on "Reload Camera"
-* (2016-12-16) If exception double-clicking, show dialog that file is missing instead of just showing message in status bar: Could not finish starting file "M:\AVCHD\BDMV\STREAM\01166.MTS":System.ComponentModel.Win32Exception: The system cannot find the drive specified
-   at System.Diagnostics.Process.StartWithShellExecuteEx(ProcessStartInfo startInfo)
-   at System.Diagnostics.Process.Start()
-   at System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
-   at System.Diagnostics.Process.Start(String fileName)
-   at ExpertMultimedia.MainForm.InputListViewDoubleClick(Object sender, EventArgs e)
-* (2016-09-29) Clear reload camera not working (RESOLVED: changed from inputListView.Clear() to inputListView.Items.Clear())
-* (2015-11-24) Reload Source should reload settings object (from xml that was saved to device) even if exists
-* (2015-11-10) Reload source should RefreshCamera device label from settings file on device (so that finished videos can be determined when marking unprocessed files runs)
+See changelog.
 
 ## Developer Notes
 * YML file names are generated based on UTC time. This is necessary since LastWriteTime of files will DIFFER depending on whether program read the file during DST or not--thus if LastWriteTime were used (as opposed to LastWriteTimeUtc), the program would not be able to tell whether the video file had a corresponding metadata (yml) file.
